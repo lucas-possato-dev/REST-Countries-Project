@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const url = "https://restcountries.com/v3.1/all";
 
@@ -19,29 +20,30 @@ const Countries = () => {
     <>
       <section className="grid">
         {countries.map((country) => {
-          const { numericCode, name, population, region, capital, flags } =
-            country;
+          const { name, cca2, population, region, capital, flags } = country;
           const { common } = name;
           const { svg } = flags;
 
           return (
-            <article key={numericCode}>
-              <div>
-                <img src={svg} alt={common} />
-                <div className="info">
-                  <h3>{common}</h3>
-                  <h4>
-                    Population: <span>{population}</span>
-                  </h4>
-                  <h4>
-                    Region: <span>{region}</span>
-                  </h4>
-                  <h4>
-                    Capital: <span>{capital}</span>
-                  </h4>
+            <Link to={`/countries/${common}`} key={cca2}>
+              <article>
+                <div>
+                  <img src={svg} alt={common} />
+                  <div className="info">
+                    <h3>{common}</h3>
+                    <h4>
+                      Population: <span>{population}</span>
+                    </h4>
+                    <h4>
+                      Region: <span>{region}</span>
+                    </h4>
+                    <h4>
+                      Capital: <span>{capital}</span>
+                    </h4>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           );
         })}
       </section>

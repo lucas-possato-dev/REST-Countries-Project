@@ -23,17 +23,32 @@ img {
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
-  background-color: #202d36;
-  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: var(--dark-bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s;
+}
+
+body.light-theme {
+  background-color: #dfdfdf;
+  color: var(--light-mode-text);
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  background-color: #2b3743;
-  padding: 10px 20px;
+  justify-content: space-between;
+  color: var(--text-color);
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 5px 10px hsla(200, 15%, 8%, 0.1);
+}
+
+header.light-theme {
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
 }
 
 .filter {
@@ -79,6 +94,11 @@ body {
   color: white;
 }
 
+.filter .form-control input.light-theme,
+#select.light-theme {
+  background-color: var(--light-mode-input);
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -109,11 +129,25 @@ body {
   font-weight: 300;
 }
 
+.grid article.light-theme {
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
+}
+
 .info {
-  background-color: #2b3743;
+  background-color: transparent;
   padding: 40px 20px;
   margin-top: -20px;
   border-radius: 0 0 4px 4px;
+}
+
+.country.light-theme {
+  background-color: var(--light-mode-background);
+  color: var(--light-mode-text);
+}
+
+.fa-moon {
+  cursor: pointer;
 }
 
 @media (min-width: 640px) {

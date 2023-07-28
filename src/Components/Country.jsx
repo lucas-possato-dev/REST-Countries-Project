@@ -13,7 +13,6 @@ const Country = () => {
           `https://restcountries.com/v3.1/name/${name}?fullText=true`
         );
         const countryData = await response.json();
-        console.log(countryData);
 
         setCountry(countryData[0]);
       } catch (error) {

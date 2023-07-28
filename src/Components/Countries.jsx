@@ -11,7 +11,6 @@ const Countries = () => {
       const response = await fetch(url);
       const countries = await response.json();
       setCountries(countries);
-      console.log(countries);
     };
 
     fetchData();
@@ -30,7 +29,7 @@ const Countries = () => {
                 <div>
                   <img src={svg} alt={common} />
                   <div className="info">
-                    <h3>{common}</h3>
+                    <h3 className="country-name">{common}</h3>
                     <h4>
                       Population: <span>{population}</span>
                     </h4>

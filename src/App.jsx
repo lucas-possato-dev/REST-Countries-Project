@@ -1,5 +1,5 @@
 import Countries from "./Components/Countries";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Filter from "./Components/Filter";
 import Header from "./Components/Header";
 import Country from "./Components/Country";
@@ -7,12 +7,15 @@ import Country from "./Components/Country";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Filter />
-      <Routes>
-        <Route path="/" element={<Countries />}></Route>
-        <Route path="/countries/:name" element={<Country />}></Route>
-      </Routes>
+      <>
+        <Header />
+
+        <Filter />
+        <Routes>
+          <Route path="/" element={<Countries />}></Route>
+          <Route path="/countries/:name" element={<Country />}></Route>
+        </Routes>
+      </>
     </BrowserRouter>
   );
 }

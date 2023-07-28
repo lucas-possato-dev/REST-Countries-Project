@@ -50,7 +50,7 @@ const Header = () => {
         </div>
         <div>
           <i className="fa-solid fa-moon" onClick={() => changeTheme()}></i>{" "}
-          Dark Mode
+          Change Theme
         </div>
       </header>
     </>
